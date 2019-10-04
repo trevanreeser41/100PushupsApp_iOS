@@ -30,7 +30,7 @@ class MasterViewController : UITableViewController {
         if let AddWorkoutVC = segue.source as? AddWorkoutController {
             model.append(WorkoutEntry(date: AddWorkoutVC.date,
                                       numberOfPushups: AddWorkoutVC.numberOfPushups,
-                                      setNum: AddWorkoutVC.setNumber))
+                                      setNum: AddWorkoutVC.setNum))
             tableView.reloadData()
         }
     }
@@ -44,6 +44,9 @@ class MasterViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         initializeModel()
         saveModel()
         loadModel()
@@ -55,7 +58,7 @@ class MasterViewController : UITableViewController {
             if let detailVC = navVC.topViewController as? DetailViewController {
                 if let indexPath = sender as? IndexPath {
                     detailVC.date = model[indexPath.row].date
-                    detailVC.pushups = model[indexPath.row].numberOfPushups
+                    detailVC.numberOfPushups = model[indexPath.row].numberOfPushups
                     detailVC.setNum = model[indexPath.row].setNum
                 }
             }

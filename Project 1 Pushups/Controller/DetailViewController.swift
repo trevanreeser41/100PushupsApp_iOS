@@ -9,10 +9,9 @@
 import UIKit
 
 class DetailViewController : UIViewController {
-    var date = "Default"
-    var pushups = 0
+    var date = String()
+    var numberOfPushups = 0
     var setNum = 0
-    
     var currentWorkoutIndex = 0
     var model: [WorkoutEntry] = []
     var entry: String?
@@ -36,7 +35,7 @@ class DetailViewController : UIViewController {
     
     private func updateUI() {
         currentWorkout.text = date
-        pushupCount.text = "\(pushups)"
+        pushupCount.text = "\(numberOfPushups)"
         setNumber.text = "\(setNum)"
     }
     
