@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		3F6E17D22343A0F000A45E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E17D12343A0F000A45E57 /* AppDelegate.swift */; };
 		3F6E17D42343A0F000A45E57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E17D32343A0F000A45E57 /* SceneDelegate.swift */; };
-		3F6E17D62343A0F000A45E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E17D52343A0F000A45E57 /* ViewController.swift */; };
 		3F6E17D92343A0F000A45E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E17D72343A0F000A45E57 /* Main.storyboard */; };
 		3F6E17DB2343A0F800A45E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E17DA2343A0F800A45E57 /* Assets.xcassets */; };
 		3F6E17DE2343A0F800A45E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E17DC2343A0F800A45E57 /* LaunchScreen.storyboard */; };
 		3F6E17E92343A0F800A45E57 /* Project_1_PushupsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E17E82343A0F800A45E57 /* Project_1_PushupsTests.swift */; };
 		3F6E17F42343A0F800A45E57 /* Project_1_PushupsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E17F32343A0F800A45E57 /* Project_1_PushupsUITests.swift */; };
+		3F6E18022343A2C300A45E57 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E18012343A2C300A45E57 /* MasterViewController.swift */; };
+		3F6E1808234444D300A45E57 /* AddWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1807234444D300A45E57 /* AddWorkoutController.swift */; };
+		3F6E180A234452AB00A45E57 /* WorkoutEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E1809234452AB00A45E57 /* WorkoutEntry.swift */; };
+		3F6E180C2344557000A45E57 /* WebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E180B2344557000A45E57 /* WebsiteController.swift */; };
+		3F6E180E2346872F00A45E57 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E180D2346872F00A45E57 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F6E17CE2343A0F000A45E57 /* Project 1 Pushups.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 1 Pushups.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6E17CE2343A0F000A45E57 /* 100 Pushups.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "100 Pushups.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6E17D12343A0F000A45E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6E17D32343A0F000A45E57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F6E17D52343A0F000A45E57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F6E17D82343A0F000A45E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F6E17DA2343A0F800A45E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F6E17DD2343A0F800A45E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		3F6E17EF2343A0F800A45E57 /* Project 1 PushupsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project 1 PushupsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6E17F32343A0F800A45E57 /* Project_1_PushupsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_1_PushupsUITests.swift; sourceTree = "<group>"; };
 		3F6E17F52343A0F800A45E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6E18012343A2C300A45E57 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		3F6E1807234444D300A45E57 /* AddWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutController.swift; sourceTree = "<group>"; };
+		3F6E1809234452AB00A45E57 /* WorkoutEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntry.swift; sourceTree = "<group>"; };
+		3F6E180B2344557000A45E57 /* WebsiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteController.swift; sourceTree = "<group>"; };
+		3F6E180D2346872F00A45E57 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +97,7 @@
 		3F6E17CF2343A0F000A45E57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F6E17CE2343A0F000A45E57 /* Project 1 Pushups.app */,
+				3F6E17CE2343A0F000A45E57 /* 100 Pushups.app */,
 				3F6E17E42343A0F800A45E57 /* Project 1 PushupsTests.xctest */,
 				3F6E17EF2343A0F800A45E57 /* Project 1 PushupsUITests.xctest */,
 			);
@@ -99,13 +107,10 @@
 		3F6E17D02343A0F000A45E57 /* Project 1 Pushups */ = {
 			isa = PBXGroup;
 			children = (
-				3F6E17D12343A0F000A45E57 /* AppDelegate.swift */,
-				3F6E17D32343A0F000A45E57 /* SceneDelegate.swift */,
-				3F6E17D52343A0F000A45E57 /* ViewController.swift */,
-				3F6E17D72343A0F000A45E57 /* Main.storyboard */,
-				3F6E17DA2343A0F800A45E57 /* Assets.xcassets */,
-				3F6E17DC2343A0F800A45E57 /* LaunchScreen.storyboard */,
-				3F6E17DF2343A0F800A45E57 /* Info.plist */,
+				3F6E18062344443900A45E57 /* Supporting Files */,
+				3F6E1803234443E700A45E57 /* Model */,
+				3F6E1805234443F100A45E57 /* View */,
+				3F6E1804234443EC00A45E57 /* Controller */,
 			);
 			path = "Project 1 Pushups";
 			sourceTree = "<group>";
@@ -128,6 +133,45 @@
 			path = "Project 1 PushupsUITests";
 			sourceTree = "<group>";
 		};
+		3F6E1803234443E700A45E57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E1809234452AB00A45E57 /* WorkoutEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F6E1804234443EC00A45E57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E18012343A2C300A45E57 /* MasterViewController.swift */,
+				3F6E1807234444D300A45E57 /* AddWorkoutController.swift */,
+				3F6E180B2344557000A45E57 /* WebsiteController.swift */,
+				3F6E180D2346872F00A45E57 /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F6E1805234443F100A45E57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E17D72343A0F000A45E57 /* Main.storyboard */,
+				3F6E17DC2343A0F800A45E57 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3F6E18062344443900A45E57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E17D12343A0F000A45E57 /* AppDelegate.swift */,
+				3F6E17D32343A0F000A45E57 /* SceneDelegate.swift */,
+				3F6E17DA2343A0F800A45E57 /* Assets.xcassets */,
+				3F6E17DF2343A0F800A45E57 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,7 +189,7 @@
 			);
 			name = "Project 1 Pushups";
 			productName = "Project 1 Pushups";
-			productReference = 3F6E17CE2343A0F000A45E57 /* Project 1 Pushups.app */;
+			productReference = 3F6E17CE2343A0F000A45E57 /* 100 Pushups.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3F6E17E32343A0F800A45E57 /* Project 1 PushupsTests */ = {
@@ -259,9 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F6E17D62343A0F000A45E57 /* ViewController.swift in Sources */,
+				3F6E18022343A2C300A45E57 /* MasterViewController.swift in Sources */,
+				3F6E1808234444D300A45E57 /* AddWorkoutController.swift in Sources */,
+				3F6E180A234452AB00A45E57 /* WorkoutEntry.swift in Sources */,
+				3F6E180C2344557000A45E57 /* WebsiteController.swift in Sources */,
 				3F6E17D22343A0F000A45E57 /* AppDelegate.swift in Sources */,
 				3F6E17D42343A0F000A45E57 /* SceneDelegate.swift in Sources */,
+				3F6E180E2346872F00A45E57 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +489,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "T.Project-1-Pushups";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "100 Pushups";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,7 +506,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "T.Project-1-Pushups";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "100 Pushups";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
