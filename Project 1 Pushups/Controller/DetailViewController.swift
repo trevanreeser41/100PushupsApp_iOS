@@ -12,9 +12,9 @@ class DetailViewController : UIViewController {
     
     //MARK: - Properties
     
-    var date = String()
-    var numberOfPushups = 0
-    var setNum = 0
+    var date = "10/01/19"
+    var numberOfPushups = 7
+    var setNum = 1
     var pageIndex = 0
     
     //MARK: - Constants

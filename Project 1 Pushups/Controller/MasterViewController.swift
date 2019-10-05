@@ -131,7 +131,7 @@ extension MasterViewController {
     //Header displaying total number of pushups
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
-       return "Total Number of Pushups: \(totalNumberOfPushups)"
+       return "Total Number of Pushups Completed: \(totalNumberOfPushups)"
     }
 }
 

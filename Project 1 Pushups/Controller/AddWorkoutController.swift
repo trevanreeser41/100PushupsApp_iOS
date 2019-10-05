@@ -10,6 +10,18 @@ import UIKit
 
 class AddWorkoutController : UITableViewController {
     
+    //MARK: - Properties
+    
+    var date: String = ""
+    var setNumber: Int = 0
+    var numberOfPushups: Int = 0
+    
+    //MARK: - Constants
+    
+    private struct Key {
+        static let workout = "workout"
+    }
+    
     //MARK: - Outlets
     
     @IBOutlet weak var addWorkoutDate: UIDatePicker!
@@ -19,20 +31,9 @@ class AddWorkoutController : UITableViewController {
     @IBOutlet weak var addSetNumber: UITextField!
     
     //MARK: - View Controller Lifecycle
-        
-    var date: String = ""
-    var setNumber: Int = 0
-    var numberOfPushups: Int = 0
-    
-    var model: [WorkoutEntry] = []
-    
-    private struct Key {
-        static let workout = "workout"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
 }
