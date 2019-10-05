@@ -20,9 +20,9 @@ class AddWorkoutController : UITableViewController {
     
     //MARK: - View Controller Lifecycle
         
-    var date: String = "" //= "11-04-2093"
-    var setNumber: Int = 0 //= 0
-    var numberOfPushups: Int = 0 //= 0
+    var date: String = ""
+    var setNumber: Int = 0
+    var numberOfPushups: Int = 0
     
     var model: [WorkoutEntry] = []
     
@@ -32,6 +32,8 @@ class AddWorkoutController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }
 

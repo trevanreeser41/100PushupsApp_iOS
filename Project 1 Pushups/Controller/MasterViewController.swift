@@ -33,6 +33,7 @@ class MasterViewController : UITableViewController {
     }
     
     @IBAction func exitAndSaveRecordScene(_ segue: UIStoryboardSegue){
+        //This will save the workout data in the Add view and place it into the home table
         if let addWorkoutVC = segue.source as? AddWorkoutController{
                 addWorkoutVC.date = "\(addWorkoutVC.addWorkoutDate.date)"
             
@@ -42,19 +43,23 @@ class MasterViewController : UITableViewController {
                 dateformatter.dateFormat = "MM/dd/YYYY"
                 addWorkoutVC.date = dateformatter.string(from: addWorkoutVC.addWorkoutDate.date)
             
+            //convert string inputs to int
             if let stringPushups = addWorkoutVC.addPushupNumber.text {
                     if let nsIntPushups = formatter.number(from: stringPushups) as? Int {
                         addWorkoutVC.numberOfPushups = nsIntPushups
                     }
                 }
-            if let stringSet = addWorkoutVC.addPushupNumber.text {
+            
+            if let stringSet = addWorkoutVC.addSetNumber.text {
                     if let nsIntSet = formatter.number(from: stringSet) as? Int {
                         addWorkoutVC.setNumber = nsIntSet
                     }
                 }
+            
             model.append(WorkoutEntry(date: addWorkoutVC.date, numberOfPushups: addWorkoutVC.numberOfPushups, setNum: addWorkoutVC.setNumber))
             
             tableView.reloadData()
+            //sum new total pushups after adding data
             totalPushups()
         }
     }
@@ -72,6 +77,7 @@ class MasterViewController : UITableViewController {
     
     //MARK: - Helpers
     
+    //sum and display the total number of pushups
     private func totalPushups() {
         totalNumberOfPushups = 0
         
@@ -122,7 +128,7 @@ extension MasterViewController {
         
         return cell
     }
-    
+    //Header displaying total number of pushups
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
        return "Total Number of Pushups: \(totalNumberOfPushups)"
@@ -133,7 +139,6 @@ extension MasterViewController {
 
 extension MasterViewController {
     private func initializeModel() {
-        model.removeAll()
         
         model.append(WorkoutEntry(date: "09/29/2019", numberOfPushups: 9, setNum: 1))
         model.append(WorkoutEntry(date: "09/30/2019", numberOfPushups: 4, setNum: 1))

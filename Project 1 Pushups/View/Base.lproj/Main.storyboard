@@ -155,10 +155,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9qi-zk-vPq" id="xXp-X6-fBJ"/>
-                            <outlet property="delegate" destination="9qi-zk-vPq" id="XIp-jd-ZCh"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="100 Pushups" id="yPc-Zp-yHw">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ri6-Q0-OQR"/>
@@ -355,6 +351,7 @@
         <!--Navigation Controller-->
         <scene sceneID="c8E-Ac-8LL">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9M-57-g8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ehu-Bl-3kF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HBs-zN-s2J">
@@ -366,7 +363,6 @@
                         <segue destination="Yyf-2z-nKa" kind="relationship" relationship="rootViewController" id="0wV-bf-8Qe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q9M-57-g8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293" y="-1035"/>
         </scene>
