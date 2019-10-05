@@ -10,17 +10,24 @@ import UIKit
 import WebKit
 class WebsiteController: UIViewController, WKUIDelegate {
     
+    //MARK: - Outlets
+    
    @IBOutlet var webView: WKWebView!
+    
+    //MARK: - View Controller Lifecycle
     
    override func loadView() {
        let webConfiguration = WKWebViewConfiguration()
-       webView = WKWebView(frame: .zero, configuration: webConfiguration)
+       webView = WKWebView(frame: .zero,
+                           configuration: webConfiguration)
        webView.uiDelegate = self
        view = webView
    }
+    
    override func viewDidLoad() {
        super.viewDidLoad()
        let myURL = URL(string:"https://hundredpushups.com")
        let myRequest = URLRequest(url: myURL!)
        webView.load(myRequest)
-   }}
+   }
+}

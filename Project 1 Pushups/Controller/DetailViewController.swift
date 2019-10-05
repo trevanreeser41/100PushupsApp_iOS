@@ -9,17 +9,21 @@
 import UIKit
 
 class DetailViewController : UIViewController {
+    
+    //MARK: - Properties
+    
     var date = String()
     var numberOfPushups = 0
     var setNum = 0
-    var currentWorkoutIndex = 0
-    var model: [WorkoutEntry] = []
-    var entry: String?
+    var pageIndex = 0
+    
+    //MARK: - Constants
     
     private struct Key {
-        static let currentWorkoutIndex = "currentWorkoutIndex"
-        static let entry = "entry"
+        static let pageIndex = "pageIndex"
     }
+    
+    //MARK: - Outlets
     
     @IBOutlet weak var currentWorkout: UILabel!
     
@@ -27,11 +31,15 @@ class DetailViewController : UIViewController {
     
     @IBOutlet weak var setNumber: UILabel!
     
+    //MARK: - View Controller Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateUI()
     }
+    
+    //MARK: - Helpers
     
     private func updateUI() {
         currentWorkout.text = date
@@ -44,22 +52,13 @@ class DetailViewController : UIViewController {
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
         
-        currentWorkoutIndex = coder.decodeInteger(forKey: Key.currentWorkoutIndex)
-        
-        if let savedEntry = coder.decodeObject(forKey: Key.entry) as? String {
-            entry = savedEntry
-        } else {
-            entry = nil
-        }
-        
-        //configure(updatingCurrentIndex: false)
+        pageIndex = coder.decodeInteger(forKey: Key.pageIndex)
+
     }
     
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
         
-        coder.encode(currentWorkoutIndex, forKey: Key.currentWorkoutIndex)
-        coder.encode(entry, forKey: Key.entry)
+        coder.encode(pageIndex, forKey: Key.pageIndex)
     }
-
 }

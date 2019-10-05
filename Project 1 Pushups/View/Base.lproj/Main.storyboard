@@ -101,15 +101,15 @@
                                 <segue destination="Uzv-lj-SCX" kind="unwind" unwindAction="exitModalScene:" id="lEC-w2-RhM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Kft-RG-E53">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Kft-RG-E53">
                             <connections>
-                                <segue destination="Uzv-lj-SCX" kind="unwind" unwindAction="exitAndSaveRecordScene:" id="EAa-61-2od"/>
+                                <segue destination="Uzv-lj-SCX" kind="unwind" unwindAction="exitAndSaveRecordScene:" id="LRJ-9t-71y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addPushupNumber" destination="c2H-D6-cOB" id="wvB-3X-YVA"/>
-                        <outlet property="addSetNumber" destination="tN6-ap-scz" id="frj-nb-Giv"/>
+                        <outlet property="addPushupNumber" destination="c2H-D6-cOB" id="38e-je-iam"/>
+                        <outlet property="addSetNumber" destination="tN6-ap-scz" id="Rdb-4R-Rum"/>
                         <outlet property="addWorkoutDate" destination="LLa-5L-wBh" id="tui-Js-Iyz"/>
                     </connections>
                 </tableViewController>

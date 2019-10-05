@@ -9,9 +9,8 @@
 import UIKit
 
 class AddWorkoutController : UITableViewController {
-    var date = "Today"
-    var numberOfPushups = 0
-    var setNum = 0
+    
+    //MARK: - Outlets
     
     @IBOutlet weak var addWorkoutDate: UIDatePicker!
     
@@ -19,8 +18,20 @@ class AddWorkoutController : UITableViewController {
     
     @IBOutlet weak var addSetNumber: UITextField!
     
+    //MARK: - View Controller Lifecycle
+        
+    var date: String = "" //= "11-04-2093"
+    var setNumber: Int = 0 //= 0
+    var numberOfPushups: Int = 0 //= 0
+    
+    var model: [WorkoutEntry] = []
+    
+    private struct Key {
+        static let workout = "workout"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
+

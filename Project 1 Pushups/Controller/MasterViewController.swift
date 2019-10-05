@@ -10,8 +10,12 @@ import UIKit
 
 class MasterViewController : UITableViewController {
     
+    //MARK: - Properties
+    
     var model: [WorkoutEntry] = []
     var totalNumberOfPushups = 0
+    
+    //MARK: - Constants
     
     private struct Storyboard {
         static let cellIdentifier = "PushupDate"
@@ -22,35 +26,58 @@ class MasterViewController : UITableViewController {
         static let workout = "workout"
     }
     
+    //MARK: - Segues
+    
     @IBAction func exitModalScene(_ segue: UIStoryboardSegue) {
         //In this case, there is nothing to do but we need a target
     }
     
-    @IBAction func exitAndSaveRecordScene(_ segue: UIStoryboardSegue) {
-        if let AddWorkoutVC = segue.source as? AddWorkoutController {
-            model.append(WorkoutEntry(date: AddWorkoutVC.date,
-                                      numberOfPushups: AddWorkoutVC.numberOfPushups,
-                                      setNum: AddWorkoutVC.setNum))
+    @IBAction func exitAndSaveRecordScene(_ segue: UIStoryboardSegue){
+        if let addWorkoutVC = segue.source as? AddWorkoutController{
+                addWorkoutVC.date = "\(addWorkoutVC.addWorkoutDate.date)"
+            
+                let formatter = NumberFormatter()
+                //Format the date to display nicely as mm/dd/yyyy
+                let dateformatter = DateFormatter()
+                dateformatter.dateFormat = "MM/dd/YYYY"
+                addWorkoutVC.date = dateformatter.string(from: addWorkoutVC.addWorkoutDate.date)
+            
+            if let stringPushups = addWorkoutVC.addPushupNumber.text {
+                    if let nsIntPushups = formatter.number(from: stringPushups) as? Int {
+                        addWorkoutVC.numberOfPushups = nsIntPushups
+                    }
+                }
+            if let stringSet = addWorkoutVC.addPushupNumber.text {
+                    if let nsIntSet = formatter.number(from: stringSet) as? Int {
+                        addWorkoutVC.setNumber = nsIntSet
+                    }
+                }
+            model.append(WorkoutEntry(date: addWorkoutVC.date, numberOfPushups: addWorkoutVC.numberOfPushups, setNum: addWorkoutVC.setNumber))
+            
             tableView.reloadData()
+            totalPushups()
         }
     }
     
-    private func totalPushups() {
-        for workout in model {
-            totalNumberOfPushups = workout.numberOfPushups + totalNumberOfPushups
-        }
-    }
+    //MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
+
         initializeModel()
-        saveModel()
         loadModel()
+        saveModel()
         totalPushups()
+    }
+    
+    //MARK: - Helpers
+    
+    private func totalPushups() {
+        totalNumberOfPushups = 0
+        
+        for workout in model {
+            totalNumberOfPushups = workout.numberOfPushups + totalNumberOfPushups
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,21 +96,27 @@ class MasterViewController : UITableViewController {
 //MARK: - Table view delegate
 
 extension MasterViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Storyboard.segueIdentifier, sender: indexPath)
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Storyboard.segueIdentifier,
+                     sender: indexPath)
     }
 }
 
 //MARK: - Table view data source
 
 extension MasterViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int{
         return model.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier,
                                                  for: indexPath)
+        
         cell.textLabel?.text = "\(model[indexPath.row].date)"
         cell.detailTextLabel?.text = "\(model[indexPath.row].numberOfPushups)"
         
@@ -96,20 +129,15 @@ extension MasterViewController {
     }
 }
 
-//MARK: - Helpers
+//MARK: - Model Management
 
 extension MasterViewController {
     private func initializeModel() {
         model.removeAll()
         
-        model.append(WorkoutEntry(date: "October 3, 2019", numberOfPushups: 9, setNum: 1))
-        model.append(WorkoutEntry(date: "October 2, 2019", numberOfPushups: 4, setNum: 1))
-        model.append(WorkoutEntry(date: "October 1, 2019", numberOfPushups: 7, setNum: 1))
-        model.append(WorkoutEntry(date: "September 30, 2019", numberOfPushups: 9, setNum: 1))
-        model.append(WorkoutEntry(date: "September 27, 2019", numberOfPushups: 1, setNum: 1))
-        model.append(WorkoutEntry(date: "September 26, 2019", numberOfPushups: 9, setNum: 1))
-        model.append(WorkoutEntry(date: "September 23, 2019", numberOfPushups: 3, setNum: 1))
-        model.append(WorkoutEntry(date: "September 21, 2019", numberOfPushups: 9, setNum: 1))
+        model.append(WorkoutEntry(date: "09/29/2019", numberOfPushups: 9, setNum: 1))
+        model.append(WorkoutEntry(date: "09/30/2019", numberOfPushups: 4, setNum: 1))
+        model.append(WorkoutEntry(date: "10/1/2019", numberOfPushups: 7, setNum: 1))
     }
     
     private func loadModel() {
